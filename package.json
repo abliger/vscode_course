@@ -19,6 +19,39 @@
 				"command": "rollup-course.rollupWelcome",
 				"title": "rollupWelcome"
 			}
+		],
+		"walkthroughs": [
+			{
+				"id": "sampled",
+				"title": "Sample",
+				"description": "A sample walkthrough",
+				"steps": [
+					{
+						"id": "runcommand",
+						"title": "Run Command",
+						"description": "This step will __run__ a **command** and check off once it has been run.\n[Run Command](command:rollup-course.rollupWelcome)",
+						"media": {
+							"markdown": "public/rollup/test.md"
+						},
+						"completionEvents": [
+							"onCommand:rollup-course.rollupWelcome"
+						]
+					},
+					{
+						"id": "changesetting",
+						"title": "Change Setting",
+						"description": "This step will change a setting and check off when the setting has changed\n[Change Setting](command:rollup-course.rollupWelcome)",
+						"media": {
+							"markdown": "public/rollup/test.md"
+						},
+						"completionEvents": [
+							"onCommand:rollup-course.rollupWelcome",
+							"onCommand:vscode-docker.configure",
+							"onCommand:vscode-docker.configureCompose"
+						]
+					}
+				]
+			}
 		]
 	},
 	"scripts": {
