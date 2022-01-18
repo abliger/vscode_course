@@ -13,8 +13,8 @@
 	"publisher": "site.abliger",
 	"activationEvents": [
 		"onCommand:site.abliger.rollup_course.showRollup",
-		"onView:package-dependencies",
-		"onNotebook:my-notebook"
+		"onCommand:site.abliger.rollup_course.pullProject",
+		"onView:course_help"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -22,6 +22,10 @@
 			{
 				"command": "site.abliger.rollup_course.showRollup",
 				"title": "Rollup 演示文档"
+			},
+			{
+				"command": "site.abliger.rollup_course.pullProject",
+				"title": "拉取rollup 快速启动项目"
 			}
 		],
 		"viewsContainers": {
@@ -36,23 +40,11 @@
 		"views": {
 			"package-explorers": [
 				{
-					"id": "package-dependencies",
-					"name": "test"
+					"id": "course_help",
+					"name": "帮助"
 				}
 			]
 		},
-		"notebooks": [
-			{
-				"id": "my-notebook",
-				"type": "my-notebook",
-				"displayName": "My Notebook",
-				"selector": [
-					{
-						"filenamePattern": "*.notebook"
-					}
-				]
-			}
-		],
 		"walkthroughs": [
 			{
 				"id": "rollup_learn",
@@ -60,12 +52,15 @@
 				"description": "%rollup-course.walkthroughs.description%",
 				"steps": [
 					{
-						"id": "quick_start",
-						"title": "%rollup-course.walkthroughs.quick_start.title%",
-						"description": "%rollup-course.walkthroughs.quick_start.description%",
+						"id": "pullProject",
+						"title": "%rollup-course.walkthroughs.pull_project.title%",
+						"description": "%rollup-course.walkthroughs.pull_project.description%",
 						"media": {
-							"markdown": "public/rollup/test.md"
-						}
+							"markdown": "public/rollup/empty.md"
+						},
+						"completionEvents": [
+							"onCommand:git.clone"
+						]
 					}
 				]
 			}
