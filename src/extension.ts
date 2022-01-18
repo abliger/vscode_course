@@ -3,6 +3,8 @@
 import { readFileSync } from 'fs'
 import { dirname, join, resolve } from 'path'
 import * as vscode from 'vscode'
+import { Controller, SampleSerializer } from './notebook'
+import { rollup } from './rollup'
 /**
  * 从某个HTML文件读取能被Webview加载的HTML内容
  * @param {*} context 上下文
@@ -22,22 +24,19 @@ function getWebViewContent(context: vscode.ExtensionContext, templatePath: strin
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  context.subscriptions.push(vscode.commands.registerCommand('rollup-course.rollupWelcome', function() {
-    const panel = vscode.window.createWebviewPanel(
-      'rollupWelcome', // viewType
-      'Rollup 学习', // 视图标题
-      vscode.ViewColumn.One, // 显示在编辑器的哪个部位
-      {
-        enableScripts: true, // 启用JS，默认禁用
-      }
-    )
-    panel.webview.html = getWebViewContent(context, 'public/rollup/custom-welcome.html')
-    panel.webview.onDidReceiveMessage(message => {
-      console.log(message)
-    }, undefined, context.subscriptions)
-  }))
+  context.subscriptions.push(
+    vscode.workspace.registerNotebookSerializer('my-notebook', new SampleSerializer())
+  );
+  context.subscriptions.push(new Controller()._controller);
+  vscode.window.registerTreeDataProvider(
+    'package-dependencies',
+    new rollup()
+  );
+  context.subscriptions.push(vscode.commands.registerCommand('aaa', () =>
+    vscode.commands.executeCommand('workbench.action.openWalkthrough', 'undefined_publisher.rollup-course#rollup_learn')))
+  let a = console.log(vscode.extensions.getExtension('undefined_publisher.rollup-course'));
+  console.log(a);
+
 }
 
 // this method is called when your extension is deactivated

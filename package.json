@@ -6,49 +6,66 @@
 	"engines": {
 		"vscode": "^1.63.0"
 	},
+	"icon": "public/Snipaste_2021-11-18_14-14-45.png",
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:rollup-course.rollupWelcome"
+		"onCommand:aaa",
+		"onView:package-dependencies",
+		"onNotebook:my-notebook"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"title": "course",
 		"commands": [
 			{
-				"command": "rollup-course.rollupWelcome",
-				"title": "rollupWelcome"
+				"command": "aaa",
+				"title": "aaa"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "package-explorers",
+					"title": "前端演示学习",
+					"icon": "public/Snipaste_2021-11-18_14-14-45.png"
+				}
+			]
+		},
+		"views": {
+			"package-explorers": [
+				{
+					"id": "package-dependencies",
+					"name": "test"
+				}
+			]
+		},
+		"notebooks": [
+			{
+				"id": "my-notebook",
+				"type": "my-notebook",
+				"displayName": "My Notebook",
+				"selector": [
+					{
+						"filenamePattern": "*.notebook"
+					}
+				]
 			}
 		],
 		"walkthroughs": [
 			{
-				"id": "sampled",
-				"title": "Sample",
-				"description": "A sample walkthrough",
+				"id": "rollup_learn",
+				"title": "%rollup-course.walkthroughs.title%",
+				"description": "%rollup-course.walkthroughs.description%",
 				"steps": [
 					{
-						"id": "runcommand",
-						"title": "Run Command",
-						"description": "This step will __run__ a **command** and check off once it has been run.\n[Run Command](command:rollup-course.rollupWelcome)",
+						"id": "quick_start",
+						"title": "%rollup-course.walkthroughs.quick_start.title%",
+						"description": "%rollup-course.walkthroughs.quick_start.description%",
 						"media": {
 							"markdown": "public/rollup/test.md"
-						},
-						"completionEvents": [
-							"onCommand:rollup-course.rollupWelcome"
-						]
-					},
-					{
-						"id": "changesetting",
-						"title": "Change Setting",
-						"description": "This step will change a setting and check off when the setting has changed\n[Change Setting](command:rollup-course.rollupWelcome)",
-						"media": {
-							"markdown": "public/rollup/test.md"
-						},
-						"completionEvents": [
-							"onCommand:rollup-course.rollupWelcome",
-							"onCommand:vscode-docker.configure",
-							"onCommand:vscode-docker.configureCompose"
-						]
+						}
 					}
 				]
 			}
@@ -66,6 +83,7 @@
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.0.0",
 		"@types/node": "14.x",
+		"@types/shelljs": "^0.8.11",
 		"@types/vscode": "^1.63.0",
 		"@typescript-eslint/eslint-plugin": "^5.9.1",
 		"@typescript-eslint/parser": "^5.9.1",
