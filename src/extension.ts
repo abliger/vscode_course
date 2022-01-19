@@ -7,13 +7,13 @@ import { Rollup } from './rollup'
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   vscode.window.registerTreeDataProvider(
-    'course_help',
+    'abliger.courseHelp',
     new Rollup()
   )
-  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.showRollup', () =>
-    vscode.commands.executeCommand('workbench.action.openWalkthrough', 'site.abliger.rollup-course#rollup_learn')))
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.showRollup', () =>
+    vscode.commands.executeCommand('workbench.action.openWalkthrough', 'abliger.rollup-course#rollup_learn')))
 
-  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.pullProjectApp', async () => {
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.pullProjectApp', async () => {
     const uri = {
       gitee: 'https://github.com.cnpmjs.org/rollup/rollup-starter-app',
       github: 'https://github.com/rollup/rollup-starter-app.git'
@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
     vscode.commands.executeCommand('git.clone', uri[remoteGit])
   }))
-  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.pullProjectLib', async () => {
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.pullProjectLib', async () => {
     const uri = {
       gitee: 'https://github.com.cnpmjs.org/rollup/rollup-starter-lib',
       github: 'https://github.com/rollup/rollup-starter-lib.git'

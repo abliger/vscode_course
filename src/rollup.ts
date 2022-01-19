@@ -19,7 +19,7 @@ export class Rollup implements vscode.TreeDataProvider<Dependency> {
     const rollupCourse = new Dependency('Rollup 演示文档', vscode.TreeItemCollapsibleState.None)
     rollupCourse.command = {
       title: 'Rollup 演示文档',
-      command: 'site.abliger.rollup_course.showRollup'
+      command: 'abliger.rollup_course.showRollup'
     }
     return [rollupCourse]
   }

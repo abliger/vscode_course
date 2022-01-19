@@ -6,22 +6,22 @@
 	"engines": {
 		"vscode": "^1.63.0"
 	},
-	"icon": "public/index.svg",
+	"icon": "public/index.png",
 	"categories": [
 		"Other"
 	],
-	"publisher": "site.abliger",
+	"publisher": "abliger",
 	"activationEvents": [
-		"onCommand:site.abliger.rollup_course.showRollup",
-		"onCommand:site.abliger.rollup_course.pullProjectApp",
-		"onCommand:site.abliger.rollup_course.pullProjectLib",
-		"onView:course_help"
+		"onCommand:abliger.rollup_course.showRollup",
+		"onCommand:abliger.rollup_course.pullProjectApp",
+		"onCommand:abliger.rollup_course.pullProjectLib",
+		"onView:abliger.courseHelp"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "site.abliger.rollup_course.showRollup",
+				"command": "abliger.rollup_course.showRollup",
 				"title": "Rollup 演示文档"
 			}
 		],
@@ -37,7 +37,7 @@
 		"views": {
 			"package-explorers": [
 				{
-					"id": "course_help",
+					"id": "abliger.courseHelp",
 					"name": "帮助"
 				}
 			]
@@ -64,7 +64,7 @@
 							"markdown": "public/rollup/queryStartApp.md"
 						},
 						"completionEvents": [
-							"onCommand:site.abliger.rollup_course.pullProjectApp"
+							"onCommand:abliger.rollup_course.pullProjectApp"
 						]
 					},
 					{
@@ -75,7 +75,7 @@
 							"markdown": "public/rollup/queryStartLib.md"
 						},
 						"completionEvents": [
-							"onCommand:site.abliger.rollup_course.pullProjectLib"
+							"onCommand:abliger.rollup_course.pullProjectLib"
 						]
 					},
 					{
