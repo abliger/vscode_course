@@ -12,5 +12,7 @@
     "rollup-course.walkthroughs.set_other.title": "rollup 配置文件的其他注意事项",
     "rollup-course.walkthroughs.set_other.description": "",
     "rollup-course.walkthroughs.jsApi.title": "rollup 使用js 构建",
-    "rollup-course.walkthroughs.jsApi.description": ""
+    "rollup-course.walkthroughs.jsApi.description": "",
+    "rollup-course.walkthroughs.plugins.title": "rollup 插件",
+    "rollup-course.walkthroughs.plugins.description": ""
 }

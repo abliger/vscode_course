@@ -1,9 +1,5 @@
-# Change Log
+## [0.0.2] - 2022-01-19
+添加 rollup 插件详情
 
-All notable changes to the "rollup-course" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## [0.0.1] - 2022-01-19
+rollup 演示文档

@@ -15,6 +15,7 @@
 		"onCommand:abliger.rollup_course.showRollup",
 		"onCommand:abliger.rollup_course.pullProjectApp",
 		"onCommand:abliger.rollup_course.pullProjectLib",
+		"onCommand:abliger.rollup_course.pullProjectVue",
 		"onView:abliger.courseHelp"
 	],
 	"main": "./out/extension.js",
@@ -101,6 +102,17 @@
 						"media": {
 							"markdown": "public/rollup/jsApi.md"
 						}
+					},
+					{
+						"id": "plugins",
+						"title": "%rollup-course.walkthroughs.plugins.title%",
+						"description": "%rollup-course.walkthroughs.plugins.description%",
+						"media": {
+							"markdown": "public/rollup/plugins.md"
+						},
+						"completionEvents": [
+							"onCommand:abliger.rollup_course.pullProjectVue"
+						]
 					}
 				]
 			}

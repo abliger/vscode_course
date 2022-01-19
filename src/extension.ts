@@ -35,6 +35,17 @@ export function activate(context: vscode.ExtensionContext) {
     }
     vscode.commands.executeCommand('git.clone', uri[remoteGit])
   }))
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.pullProjectVue', async () => {
+    const uri = {
+      gitee: 'https://github.com.cnpmjs.org/abliger/rollup-plugin-vue-test',
+      github: 'https://github.com/abliger/rollup-plugin-vue-test.git',
+    } as { [key: string]: string }
+    const remoteGit = await vscode.window.showQuickPick(Object.keys(uri))
+    if (!remoteGit) {
+      return
+    }
+    vscode.commands.executeCommand('git.clone', uri[remoteGit])
+  }))
 }
 
 // this method is called when your extension is deactivated
