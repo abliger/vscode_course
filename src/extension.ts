@@ -13,18 +13,27 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.showRollup', () =>
     vscode.commands.executeCommand('workbench.action.openWalkthrough', 'site.abliger.rollup-course#rollup_learn')))
 
-  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.pullProject', async() => {
+  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.pullProjectApp', async () => {
     const uri = {
       gitee: 'https://github.com.cnpmjs.org/rollup/rollup-starter-app',
       github: 'https://github.com/rollup/rollup-starter-app.git'
-    } as {[key:string]:string}
+    } as { [key: string]: string }
     const remoteGit = await vscode.window.showQuickPick(Object.keys(uri))
     if (!remoteGit) {
       return
     }
-    const a = await vscode.commands.executeCommand('git.clone', uri[remoteGit])
-    console.log(a)
-    vscode.commands.executeCommand('workbench.action.openWalkthrough', 'site.abliger.rollup-course#rollup_learn')
+    vscode.commands.executeCommand('git.clone', uri[remoteGit])
+  }))
+  context.subscriptions.push(vscode.commands.registerCommand('site.abliger.rollup_course.pullProjectLib', async () => {
+    const uri = {
+      gitee: 'https://github.com.cnpmjs.org/rollup/rollup-starter-lib',
+      github: 'https://github.com/rollup/rollup-starter-lib.git'
+    } as { [key: string]: string }
+    const remoteGit = await vscode.window.showQuickPick(Object.keys(uri))
+    if (!remoteGit) {
+      return
+    }
+    vscode.commands.executeCommand('git.clone', uri[remoteGit])
   }))
 }
 

@@ -13,7 +13,8 @@
 	"publisher": "site.abliger",
 	"activationEvents": [
 		"onCommand:site.abliger.rollup_course.showRollup",
-		"onCommand:site.abliger.rollup_course.pullProject",
+		"onCommand:site.abliger.rollup_course.pullProjectApp",
+		"onCommand:site.abliger.rollup_course.pullProjectLib",
 		"onView:course_help"
 	],
 	"main": "./out/extension.js",
@@ -22,10 +23,6 @@
 			{
 				"command": "site.abliger.rollup_course.showRollup",
 				"title": "Rollup 演示文档"
-			},
-			{
-				"command": "site.abliger.rollup_course.pullProject",
-				"title": "拉取rollup 快速启动项目"
 			}
 		],
 		"viewsContainers": {
@@ -52,15 +49,58 @@
 				"description": "%rollup-course.walkthroughs.description%",
 				"steps": [
 					{
-						"id": "pullProject",
-						"title": "%rollup-course.walkthroughs.pull_project.title%",
-						"description": "%rollup-course.walkthroughs.pull_project.description%",
+						"id": "queryStart",
+						"title": "%rollup-course.walkthroughs.queryStart.title%",
+						"description": "%rollup-course.walkthroughs.queryStart.description%",
 						"media": {
-							"markdown": "public/rollup/empty.md"
+							"markdown": "public/rollup/queryStart.md"
+						}
+					},
+					{
+						"id": "queryStartApp",
+						"title": "%rollup-course.walkthroughs.queryStartApp.title%",
+						"description": "%rollup-course.walkthroughs.queryStartApp.description%",
+						"media": {
+							"markdown": "public/rollup/queryStartApp.md"
 						},
 						"completionEvents": [
-							"onCommand:git.clone"
+							"onCommand:site.abliger.rollup_course.pullProjectApp"
 						]
+					},
+					{
+						"id": "queryStartLib",
+						"title": "%rollup-course.walkthroughs.queryStartLib.title%",
+						"description": "%rollup-course.walkthroughs.queryStartLib.description%",
+						"media": {
+							"markdown": "public/rollup/queryStartLib.md"
+						},
+						"completionEvents": [
+							"onCommand:site.abliger.rollup_course.pullProjectLib"
+						]
+					},
+					{
+						"id": "set",
+						"title": "%rollup-course.walkthroughs.set.title%",
+						"description": "%rollup-course.walkthroughs.set.description%",
+						"media": {
+							"markdown": "public/rollup/set.md"
+						}
+					},
+					{
+						"id": "set_other",
+						"title": "%rollup-course.walkthroughs.set_other.title%",
+						"description": "%rollup-course.walkthroughs.set_other.description%",
+						"media": {
+							"markdown": "public/rollup/set_other.md"
+						}
+					},
+					{
+						"id": "jsApi",
+						"title": "%rollup-course.walkthroughs.jsApi.title%",
+						"description": "%rollup-course.walkthroughs.jsApi.description%",
+						"media": {
+							"markdown": "public/rollup/jsApi.md"
+						}
 					}
 				]
 			}
