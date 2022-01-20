@@ -16,11 +16,16 @@ export class Rollup implements vscode.TreeDataProvider<Dependency> {
   }
 
   getChildren(): vscode.ProviderResult<Dependency[]> {
-    const rollupCourse = new Dependency('Rollup 演示文档', vscode.TreeItemCollapsibleState.None)
-    rollupCourse.command = {
+    const rollupCourse1 = new Dependency('Rollup 演示文档', vscode.TreeItemCollapsibleState.None)
+    rollupCourse1.command = {
       title: 'Rollup 演示文档',
       command: 'abliger.rollup_course.showRollup'
     }
-    return [rollupCourse]
+    const rollupCourse2 = new Dependency('Rollup 实验', vscode.TreeItemCollapsibleState.None)
+    rollupCourse2.command = {
+      title: 'Rollup 实验',
+      command: 'abliger.rollup_course.showRollupProject'
+    }
+    return [rollupCourse1, rollupCourse2]
   }
 }

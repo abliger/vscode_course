@@ -1,4 +1,8 @@
 {
+    "rollupProject.walkthroughs.title": "Rollup 实验",
+    "rollupProject.walkthroughs.description": "Rollup 项目实验和element rollup分析",
+    "rollupProject.walkthroughs.markdownLoader.title": "项目一、 vue markdown 处理",
+    "rollupProject.walkthroughs.markdownLoader.description": "目标： \n1. 打包vue3-markdown-loader\n2. 再网页中渲染markdown ",
     "rollup-course.walkthroughs.title": "Rollup 学习",
     "rollup-course.walkthroughs.description": "Rollup 学习和示例",
     "rollup-course.walkthroughs.queryStart.title": "Rollup 学习目标",

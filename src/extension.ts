@@ -12,6 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
   )
   context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.showRollup', () =>
     vscode.commands.executeCommand('workbench.action.openWalkthrough', 'abliger.rollup-course#rollup_learn')))
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.showRollupProject', () =>
+    vscode.commands.executeCommand('workbench.action.openWalkthrough', 'abliger.rollup-course#rollupProject')))
 
   context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.pullProjectApp', async () => {
     const uri = {
@@ -45,6 +47,9 @@ export function activate(context: vscode.ExtensionContext) {
       return
     }
     vscode.commands.executeCommand('git.clone', uri[remoteGit])
+  }))
+  context.subscriptions.push(vscode.commands.registerCommand('abliger.rollup_course.markdown', async () => {
+    vscode.commands.executeCommand('git.clone', 'https://gitee.com/abliger/vue3-markdown-loader.git')
   }))
 }
 

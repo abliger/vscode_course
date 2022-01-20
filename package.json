@@ -16,6 +16,7 @@
 		"onCommand:abliger.rollup_course.pullProjectApp",
 		"onCommand:abliger.rollup_course.pullProjectLib",
 		"onCommand:abliger.rollup_course.pullProjectVue",
+		"onCommand:abliger.rollup_course.markdown",
 		"onView:abliger.courseHelp"
 	],
 	"main": "./out/extension.js",
@@ -112,6 +113,24 @@
 						},
 						"completionEvents": [
 							"onCommand:abliger.rollup_course.pullProjectVue"
+						]
+					}
+				]
+			},
+			{
+				"id": "rollupProject",
+				"title": "%rollupProject.walkthroughs.title%",
+				"description": "%rollupProject.walkthroughs.description%",
+				"steps": [
+					{
+						"id": "markdownLoader",
+						"title": "%rollupProject.walkthroughs.markdownLoader.title%",
+						"description": "%rollupProject.walkthroughs.markdownLoader.description%",
+						"media": {
+							"markdown": "public/rollupProject/markdownLoader.md"
+						},
+						"completionEvents": [
+							"onCommand:abliger.rollup_course.markdown"
 						]
 					}
 				]
