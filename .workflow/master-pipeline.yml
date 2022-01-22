@@ -1,15 +1,15 @@
 version: '1.0'
-name: pipeline-20220122
-displayName: pipeline-20220122
+name: pipeline-20220123
+displayName: pipeline-20220123
 triggers:
   trigger: auto
   push:
     branches:
-      precise:
-        - master
+      prefix:
+        - ''
 stages:
-  - name: stage-c86c0762
-    displayName: 未命名
+  - name: stage-849c104d
+    displayName: publish
     strategy: naturally
     trigger: auto
     executor: []
@@ -25,4 +25,3 @@ stages:
 permissions:
   - role: admin
     members: []
-
