@@ -1,0 +1,31 @@
+version: '1.0'
+name: pipeline-20220122
+displayName: pipeline-20220122
+triggers:
+  trigger: auto
+  push:
+    branches:
+      precise:
+        - master
+stages:
+  - name: stage-a68a983c
+    displayName: install
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@nodejs
+        name: build_nodejs
+        displayName: Nodejs 构建
+        nodeVersion: 15.12.0
+        artifacts:
+          - name: BUILD_ARTIFACT
+            path:
+              - ./out
+        commands:
+          - npm install && rm -rf ./out && npm run deploy
+strategy:
+  stepTimeout: 20
+permissions:
+  - role: admin
+    members: []
