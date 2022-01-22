@@ -23,7 +23,7 @@ stages:
             path:
               - ./out
         commands:
-          - npm install && npm run compile && npx vsce publish -p:$TOKEN
+          - npm install && npx vsce publish -p:$TOKEN
 strategy:
   stepTimeout: 20
 permissions:

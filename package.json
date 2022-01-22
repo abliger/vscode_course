@@ -144,8 +144,7 @@
 		"deploy": "vsce publish",
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint --fix src --ext ts",
-		"test": "node ./out/test/runTest.js",
-		"build": "rollup -c"
+		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^21.0.1",
