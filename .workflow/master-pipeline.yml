@@ -8,24 +8,21 @@ triggers:
       precise:
         - master
 stages:
-  - name: stage-a68a983c
-    displayName: install
+  - name: stage-c86c0762
+    displayName: 未命名
     strategy: naturally
     trigger: auto
     executor: []
     steps:
-      - step: build@nodejs
-        name: build_nodejs
-        displayName: Nodejs 构建
-        nodeVersion: 15.12.0
-        artifacts:
-          - name: BUILD_ARTIFACT
-            path:
-              - ./out
-        commands:
-          - npm install && npm run compile && npx vsce publish -p:$TOKEN
-strategy:
-  stepTimeout: 20
+      - step: shell@agent
+        name: execute_shell
+        displayName: Shell 脚本执行
+        hostGroupID: gitee-go
+        script: |-
+          npm install
+          npx vsce publish -p $TOKEN
+          echo 'success publish vscode plugin'
 permissions:
   - role: admin
     members: []
+
