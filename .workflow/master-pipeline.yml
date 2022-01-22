@@ -23,7 +23,7 @@ stages:
             path:
               - ./out
         commands:
-          - npm run deploy -- -p:$TOKEN
+          - npm install && npm run deploy -- -p:$TOKEN
 strategy:
   stepTimeout: 20
 permissions:
