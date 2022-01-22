@@ -6,7 +6,7 @@ vue3-markdown-loader 是本人参照vitepress markdown解析，编写的markdown
 
 ### 1. 打包vue3-markdown-loader
 
-在进行这项实验时，请先[拉去代码](command:abliger.rollup_course.markdown)到本地
+在进行这项实验时，请先[拉取代码](command:abliger.rollup_course.markdown)到本地
 
 操作步骤：
 1. 进入项目我们会看到这是一个npm 项目,我们会知道该项目一定需要`@rollup/plugin-node-resolve`、`@rollup/plugin-commonjs`这两个插件
