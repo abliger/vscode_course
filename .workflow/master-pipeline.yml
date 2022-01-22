@@ -20,7 +20,6 @@ stages:
         hostGroupID: gitee-go
         script: 
         |
-          cd ~/gitee_go/deploy
           npm install
           npx vsce publish -p $TOKEN
           echo 'success publish vscode plugin'
