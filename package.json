@@ -132,6 +132,14 @@
 						"completionEvents": [
 							"onCommand:abliger.rollup_course.markdown"
 						]
+					},
+					{
+						"id": "vitepress",
+						"title": "%rollupProject.walkthroughs.vitepress.title%",
+						"description": "%rollupProject.walkthroughs.vitepress.description%",
+						"media": {
+							"markdown": "public/rollupProject/vitepress.md"
+						}
 					}
 				]
 			}
